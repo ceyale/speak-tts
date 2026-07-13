@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>speak// — Minimalbeispiel</title>
+</head>
+<body>
+  <!--
+    Minimalbeispiel: zeigt, wie SpeechEngine ganz ohne UI-Schicht
+    und ohne Styling direkt verwendet werden kann.
+  -->
+  <textarea id="text">Dies ist ein minimales Beispiel ohne Styling.</textarea>
+  <button id="speak">Sprechen</button>
+
+  <script type="module">
+    import { SpeechEngine } from '../src/js/core/speechEngine.js';
+
+    const engine = new SpeechEngine();
+    const button = document.getElementById('speak');
+    const textarea = document.getElementById('text');
+
+    button.addEventListener('click', () => {
+      engine.speak(textarea.value);
+    });
+  </script>
+</body>
+</html>
