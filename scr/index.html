@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>speak// text-to-speech</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+<div class="app">
+  <div class="titlebar">
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    <span class="label">speak// — text-to-speech</span>
+  </div>
+
+  <div class="unsupported" id="unsupported">
+    Dieser Browser unterstützt die Web Speech API nicht. Bitte Chrome, Edge oder Safari verwenden.
+  </div>
+
+  <div class="app__body">
+    <div class="prompt">$ text eingeben</div>
+    <textarea id="text" placeholder="Text hier einfügen oder tippen…">Hallo, das ist ein Test der Text-zu-Sprache Funktion.</textarea>
+    <div class="meta">
+      <span id="charcount">0 Zeichen</span>
+      <span>lokale Stimmen deines Browsers/Betriebssystems</span>
+    </div>
+
+    <div class="controls">
+      <div class="field full">
+        <label>Stimme</label>
+        <select id="voice"></select>
+      </div>
+
+      <div class="field">
+        <label>Geschwindigkeit <span class="val" id="rateVal">1.0</span></label>
+        <input type="range" id="rate" min="0.5" max="2" step="0.1" value="1">
+      </div>
+
+      <div class="field">
+        <label>Tonhöhe <span class="val" id="pitchVal">1.0</span></label>
+        <input type="range" id="pitch" min="0" max="2" step="0.1" value="1">
+      </div>
+
+      <div class="field full">
+        <label>Lautstärke <span class="val" id="volVal">1.0</span></label>
+        <input type="range" id="volume" min="0" max="1" step="0.05" value="1">
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="primary" id="playBtn">▶ Sprechen</button>
+      <button id="pauseBtn" disabled>⏸ Pause</button>
+      <button class="stop" id="stopBtn" disabled>■ Stopp</button>
+      <div class="status" id="status"><div class="pulse"></div><span>bereit</span></div>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

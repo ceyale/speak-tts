@@ -1,0 +1,39 @@
+/* Reset & Grundlayout */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-mono);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+}
+
+.app {
+  width: 100%;
+  max-width: 760px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.app__body {
+  padding: var(--space-4);
+}
+
+@media (max-width: 520px) {
+  body {
+    padding: var(--space-3);
+  }
+}
